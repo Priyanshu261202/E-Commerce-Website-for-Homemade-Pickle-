@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tangy Tales</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img src="logo.jpeg" alt="Tangy Tales Logo" class="logo">
+        <h1>Tangy Tales</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+        <h2>Authentic Homemade Achaar</h2>
+        <p>
+            At Tangy Tales, we bring you the true essence of traditional Indian achaar, crafted with love and care. 
+            Our recipes have been passed down through generations, ensuring every bite is a burst of flavor and nostalgia. 
+            Made with the freshest ingredients and a touch of home, our achaar is perfect for adding a tangy twist to your meals. 
+            Whether it's the spicy kick of mango, the zesty freshness of lemon, or the hearty mix of seasonal vegetables, 
+            our achaar is a celebration of taste and tradition.
+        </p>
+    </div>
+    <div class="hero-image">
+        <img src="illustration.png" alt="Achaar Illustration">
+    </div>
+</section>
+
+ <!-- List of Achaars -->
+<section id="products" class="products">
+  <div class="container">
+    <h2>Our Achaars.. </h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="location.href='product-details/mango-achar.html';">
+        <img src="Tangy mango.jpeg" alt="Mango Achaar">
+        <h3>Tangy Mango</h3>
+        <p>Sweet, sour, and spicy – a classic favorite.</p>
+        <span class="price">₹2099 /-</span>
+      </div>
+      <div class="product-card" onclick="location.href='product-details/lemon-achar.html';">
+        <img src="Tangy Lemon.jpeg" alt="Lemon Achaar">
+        <h3>Tangy Lemon</h3>
+        <p>Zesty and refreshing with a hint of spice.</p>
+        <span class="price">₹1179 /-</span>
+      </div>
+      <div class="product-card" onclick="location.href='product-details/mixed-veg-achar.html';">
+        <img src="Tangy Mixed.jpg" alt="Mixed Veg Achaar">
+        <h3>Tangy Mixed</h3>
+        <p>A delightful mix of seasonal vegetables.</p>
+        <span class="price">₹2219 /-</span>
+      </div>
+      <div class="product-card" onclick="location.href='product-details/chilli-achar.html';">
+        <img src="Tangy Chilli.jpeg" alt="Chilli Achaar">
+        <h3>Tangy Chilli</h3>
+        <p>Spicy and bold for heat lovers.</p>
+        <span class="price">₹1199</span>
+      </div>
+      <div class="product-card" onclick="location.href='product-details/garlic-achar.html';">
+        <img src="Tangy Garlic.jpeg" alt="Garlic Achaar">
+        <h3>Tangy Garlic</h3>
+        <p>Rich and aromatic with a pungent kick.</p>
+        <span class="price">₹2209 /-</span>
+      </div>
+      <div class="product-card" onclick="location.href='product-details/carrot-achar.html';">
+        <img src="Tangy Carrot.jpg" alt="Carrot Achaar">
+        <h3>Tangy Carrot</h3>
+        <p>Slightly sweet and perfectly spiced.</p>
+        <span class="price">₹1189 /-</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2>Why Choose Us ?</h2>
+      <div class="reasons">
+        <div class="reason">
+          <i class="fas fa-heart"></i>
+          <h3>Made with Love</h3>
+          <p>Every jar is crafted with care and tradition.</p>
+        </div>
+        <div class="reason">
+          <i class="fas fa-seedling"></i>
+          <h3>Natural Ingredients</h3>
+          <p>We use only the freshest and finest ingredients.</p>
+        </div>
+        <div class="reason">
+          <i class="fas fa-award"></i>
+          <h3>Authentic Recipes</h3>
+          <p>Recipes passed down through generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Tangy Tales. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
