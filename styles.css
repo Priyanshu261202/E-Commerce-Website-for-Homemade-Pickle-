@@ -521,7 +521,7 @@ nav ul li a {
   }
 
   .hero-content p {
-    font-size: 0.45rem;
+    font-size: 0.6rem;
     line-height: 1.5;
     margin-bottom: 10px;
   }
@@ -535,7 +535,7 @@ nav ul li a {
   }
 
   .hero-image img {
-    width: 70%;
+    width: 55%;
     max-width: 300px;
     margin: 0 auto;
   }
