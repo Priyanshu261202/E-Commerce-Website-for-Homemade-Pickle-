@@ -527,7 +527,7 @@ nav ul li a {
   }
 
   .hero-image {
-    width: 80%;
+    width: 90%;
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -642,7 +642,7 @@ nav ul li a {
 
   .reasons {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 22px;
     padding: 0 15px;
   }
 
