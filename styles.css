@@ -366,24 +366,42 @@ footer .social-icons a:hover {
 }
 /* Mobile Navigation */
 @media (max-width: 768px) {
+  /* Keep navbar horizontal but make it smaller */
   header .container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;  /* Keep horizontal layout */
+    justify-content: space-between;
+    padding: 10px;
   }
 
   .brand {
-    margin-bottom: 20px;
-    justify-content: center;
+    margin-bottom: 0;
+    gap: 5px;  /* Reduce space between logo and text */
+  }
+
+  .logo {
+    width: 30px;  /* Make logo smaller */
+    height: 30px;
+  }
+
+  .brand h1 {
+    font-size: 1.2rem;  /* Smaller brand text */
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;  /* Keep horizontal layout */
+    gap: 10px;  /* Reduce gap between menu items */
   }
 
-  nav ul li {
-    width: 100%;
-    text-align: center;
+  nav ul li a {
+    font-size: 0.9rem;  /* Smaller text */
+    padding: 5px;
+  }
+
+  #cart-count {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    top: -8px;
+    right: -8px;
   }
 }
 
