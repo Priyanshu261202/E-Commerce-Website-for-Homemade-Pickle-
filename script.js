@@ -25,27 +25,38 @@ function updateCart() {
 updateCart();
 
 document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.product-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.transform = 'translateY(-5px) scale(1.02)';
-                entry.target.style.boxShadow = '0 10px 20px rgba(255, 121, 59, 0.485)';
-                // Stop observing after animation
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.3 // Trigger when 30% of the card is visible
-    });
+  const options = {
+    root: null,
+    rootMargin: '-20% 0px',
+    threshold: 0.3
+  };
 
-    cards.forEach(card => {
-        // Reset initial styles
-        card.style.transform = 'translateY(0) scale(1)';
-        card.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.15)';
-        card.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
-        // Start observing
-        observer.observe(card);
+  let currentActiveCard = null;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        
+        // Remove active class from previous card
+        if (currentActiveCard && currentActiveCard !== entry.target) {
+          currentActiveCard.classList.remove('active');
+        }
+        
+        // Add active class to current card
+        entry.target.classList.add('active');
+        currentActiveCard = entry.target;
+      } else {
+        // Only remove active class if card is scrolled past significantly
+        if (entry.boundingClientRect.top > window.innerHeight) {
+          entry.target.classList.remove('active');
+        }
+      }
     });
+  }, options);
+
+  // Observe all product cards
+  document.querySelectorAll('.product-card').forEach(card => {
+    observer.observe(card);
+  });
 });
