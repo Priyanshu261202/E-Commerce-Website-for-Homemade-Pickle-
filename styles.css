@@ -494,78 +494,42 @@ nav ul li a {
 @media screen and (max-width: 768px) {
   .hero {
     display: flex !important;
-    flex-direction: row !important;
-    padding: 15px !important;
-    gap: 10px;
-    margin-top: 0;
+    flex-direction: column !important;
+    padding: 20px 15px !important;
+    gap: 15px;
+    align-items: center;
   }
 
   .hero-content {
-    width: 50% !important;
+    width: 100% !important;
     margin-top: 0 !important;
     padding-right: 0 !important;
-    text-align: left !important;
+    text-align: center !important;
   }
 
   .hero-content h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.8rem !important;
     margin: 0 0 10px 0 !important;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .hero-content p {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
     line-height: 1.4 !important;
     margin: 0 !important;
+    padding: 0 10px;
   }
 
   .hero-image {
-    width: 50% !important;
-    margin: 0 !important;
+    width: 80% !important;
+    margin: 10px 0 0 0 !important;
   }
 
   .hero-image img {
     width: 100% !important;
     margin: 0 !important;
   }
-
-  /* Products Mobile Styles */
-  .products {
-    padding: 20px 0 !important;
-  }
-
-  .products h2 {
-    font-size: 1.5rem !important;
-    margin-bottom: 15px !important;
-    padding: 0 15px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    padding: 0 10px;
-  }
-
-  .product-card {
-    padding: 10px !important;
-  }
-
-  .product-card img {
-    max-width: 70% !important;
-  }
-
-  .product-card h3 {
-    font-size: 1rem !important;
-    margin: 8px 0 5px 0 !important;
-  }
-
-  .product-card p {
-    font-size: 0.8rem !important;
-    margin-bottom: 5px !important;
-  }
-
-  .product-card .price {
-    font-size: 1rem !important;
-  }
-}  
-  
+}
