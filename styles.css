@@ -364,104 +364,127 @@ footer .social-icons a {
 footer .social-icons a:hover {
   color: var(--primary-color);
 }
-/* Mobile Navigation */
-@media (max-width: 768px) {
-  /* Keep navbar horizontal but make it smaller */
-  header .container {
-    flex-direction: row;  /* Keep horizontal layout */
-    justify-content: space-between;
-    padding: 10px;
+/* Base navbar styles */
+header {
+  background-color: var(--white);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+}
+
+header .container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+#cart-icon {
+  position: relative;
+}
+
+#cart-count {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 5px 0;
   }
 
-  .brand {
-    margin-bottom: 0;
-    gap: 5px;  /* Reduce space between logo and text */
+  header .container {
+    padding: 0 10px;
   }
 
   .logo {
-    width: 30px;  /* Make logo smaller */
+    width: 30px;
     height: 30px;
   }
 
   .brand h1 {
-    font-size: 1.2rem;  /* Smaller brand text */
+    font-size: 1.2rem;
   }
 
   nav ul {
-    flex-direction: row;  /* Keep horizontal layout */
-    gap: 10px;  /* Reduce gap between menu items */
+    gap: 10px !important;
   }
 
   nav ul li a {
-    font-size: 0.9rem;  /* Smaller text */
+    font-size: 0.8rem;
     padding: 5px;
   }
 
   #cart-count {
-    font-size: 0.7rem;
     padding: 1px 4px;
+    font-size: 0.7rem;
     top: -8px;
     right: -8px;
   }
 }
 
-/* Product Grid Mobile Responsiveness */
-@media (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 0 15px;
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  nav ul li a {
+    font-size: 0.7rem;
+    padding: 3px;
   }
-}
 
-@media (max-width: 600px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .product-card {
-    padding: 15px;
-  }
-  
-  .product-card img {
-    max-width: 70%;
-  }
-}
-
-/* Reasons Section Mobile Responsiveness */
-@media (max-width: 768px) {
-  .reasons {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 15px;
-  }
-  
-  .why-choose-us {
-    padding: 50px 0;
-  }
-  
-  .reason {
-    padding: 20px;
-  }
-}
-
-/* General Mobile Adjustments */
-@media (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 0 10px;
-  }
-  
-  h2 {
-    font-size: 2rem;
-  }
-  
-  .hero-content h2 {
-    font-size: 2rem;
-  }
-  
-  .hero-content p {
+  .brand h1 {
     font-size: 1rem;
+  }
+
+  nav ul {
+    gap: 8px !important;
   }
 }
