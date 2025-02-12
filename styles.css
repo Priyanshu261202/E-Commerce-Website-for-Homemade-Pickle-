@@ -397,7 +397,7 @@ header .container {
 }
 
 nav {
-  display: flex;
+  display: sticky;
   align-items: center;
 }
 
