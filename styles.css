@@ -364,3 +364,86 @@ footer .social-icons a {
 footer .social-icons a:hover {
   color: var(--primary-color);
 }
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Product Grid Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .product-card {
+    padding: 15px;
+  }
+  
+  .product-card img {
+    max-width: 70%;
+  }
+}
+
+/* Reasons Section Mobile Responsiveness */
+@media (max-width: 768px) {
+  .reasons {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .why-choose-us {
+    padding: 50px 0;
+  }
+  
+  .reason {
+    padding: 20px;
+  }
+}
+
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
