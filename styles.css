@@ -706,3 +706,41 @@ nav ul li a {
   .why-choose-us {
     margin-bottom: 20px;
   }
+
+
+.price-cart-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+.cart-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .price-cart-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cart-button {
+    width: 100%;
+    padding: 10px;
+  }
+}
