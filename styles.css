@@ -444,7 +444,7 @@ nav ul li a {
   }
 
   header .container {
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .logo {
@@ -453,7 +453,7 @@ nav ul li a {
   }
 
   .brand h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   nav ul {
@@ -461,7 +461,7 @@ nav ul li a {
   }
 
   nav ul li a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 5px;
   }
 
@@ -535,8 +535,9 @@ nav ul li a {
   }
 
   .hero-image img {
-    width: 55%;
+    width: 70%;
     max-width: 300px;
+    align-items: center;
     margin: 0 auto;
   }
 
