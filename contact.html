@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tangy Tales</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e67e22;
+            --secondary-color: #d35400;
+            --background-color: #f8f8f8;
+            --text-color: #333;
+            --white: #fff;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Playfair Display', serif;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --shadow-color: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 92.5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+        }
+
+        header .container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            flex-direction: row !important;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 20px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        #cart-icon {
+            position: relative;
+        }
+
+        #cart-count {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        /* Contact Hero Section */
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1));
+            padding: 80px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-hero h2 {
+            font-size: 2.7rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-family: var(--font-secondary);
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 60px 20px;
+            background-color: var(--white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--light-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 5px 0;
+            }
+
+            header .container {
+                padding: 0 10px;
+            }
+
+            .logo {
+                width: 30px;
+                height: 30px;
+            }
+
+            .brand h1 {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 10px !important;
+            }
+
+            nav ul li a {
+                font-size: 0.8rem;
+                padding: 5px;
+            }
+
+            #cart-count {
+                padding: 1px 4px;
+                font-size: 0.7rem;
+                top: -8px;
+                right: -8px;
+            }
+
+            .contact-hero h2 {
+                font-size: 2rem;
+            }
+
+            .contact-hero p {
+                font-size: 1rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .contact-hero {
+                padding: 40px 20px;
+            }
+
+            .contact-hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .brand h1 {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 8px !important;
+            }
+
+            nav ul li a {
+                font-size: 0.7rem;
+                padding: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <div class="brand">
+                <img src="logo.jpeg" alt="Tangy Tales Logo" class="logo">
+                <h1>Tangy Tales</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <form class="contact-form" action="#" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tangy Tales. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
