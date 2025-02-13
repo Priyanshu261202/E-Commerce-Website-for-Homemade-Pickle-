@@ -267,7 +267,7 @@
             }
         }
 
-        /* Small Mobile Screens */
+       
         @media screen and (max-width: 480px) {
             .cart-item {
                 padding: 10px;
@@ -294,17 +294,17 @@
         <div class="cart-container">
             <h2 class="cart-title">Your Cart</h2>
             <div id="cart-items">
-                <!-- Cart items will be dynamically inserted here -->
+                
             </div>
             <div id="cart-summary" class="cart-summary">
-                <!-- Summary will be dynamically inserted here -->
+                
             </div>
             <a href="index.html" class="continue-shopping">← Continue Shopping</a>
         </div>
     </section>
 
     <script>
-        function displayCart() {
+                function displayCart() {
             const cartContainer = document.getElementById('cart-items');
             const cartSummary = document.getElementById('cart-summary');
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -351,7 +351,7 @@
                     <h3>Total Amount:</h3>
                     <h3>₹${total.toFixed(2)} /-</h3>
                 </div>
-                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+                <button class="checkout-btn" onclick="initiateUPIPayment(${total})">Pay with UPI</button>
             `;
             cartSummary.style.display = 'block';
         }
@@ -374,7 +374,7 @@
             localStorage.setItem('cart', JSON.stringify(cart));
             displayCart();
             
-            // Update cart count in header
+            
             const cartCount = document.getElementById('cart-count');
             if (cartCount) {
                 const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -382,12 +382,65 @@
             }
         }
 
-        function checkout() {
-            alert('Proceeding to checkout...');
-            // Add your checkout logic here
+        
+        function initiateUPIPayment(amount) {
+            
+            const upiId = "9821567780@ptyes"; 
+            
+           
+            const upiURL = `upi://pay?pa=${upiId}&pn=Achaar%20Store&am=${amount}&cu=INR&tn=Order%20Payment`;
+            
+            
+            if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+               
+                const paymentLink = document.createElement('a');
+                paymentLink.href = upiURL;
+                paymentLink.click();
+                
+                
+                checkPaymentStatus();
+            } else {
+                
+                showDesktopPaymentInfo(upiId, amount);
+            }
         }
 
-        // Initialize cart display when page loads
+        function showDesktopPaymentInfo(upiId, amount) {
+            const cartContainer = document.querySelector('.cart-container');
+            
+            // Create payment info section
+            const paymentInfo = document.createElement('div');
+            paymentInfo.className = 'payment-info';
+            paymentInfo.innerHTML = `
+                <div style="text-align: center; margin: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+                    <h3 style="margin-bottom: 15px;">Payment Details</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 10px;">UPI ID: <strong>${upiId}</strong></p>
+                    <p style="font-size: 1.1em; margin-bottom: 10px;">Amount: ₹${amount}</p>
+                    <p style="color: #666;">Please open your UPI app and scan QR code or pay to the UPI ID shown above</p>
+                    <button onclick="confirmPayment()" style="margin-top: 15px; padding: 10px 20px; background: #e67e22; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        I've Made the Payment
+                    </button>
+                </div>
+            `;
+            
+            cartContainer.appendChild(paymentInfo);
+        }
+
+        function confirmPayment() {
+            alert('Thank you for your payment! Your order will be processed once we confirm the payment.');
+            localStorage.removeItem('cart');
+            window.location.href = 'order-confirmation.html';
+        }
+
+        function checkPaymentStatus() {
+            const confirmed = confirm('Once you complete the payment in your UPI app, click OK to confirm.');
+            if (confirmed) {
+                localStorage.removeItem('cart');
+                window.location.href = 'order-confirmation.html';
+            }
+        }
+
+       
         document.addEventListener('DOMContentLoaded', displayCart);
     </script>
 </body>
