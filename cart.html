@@ -19,7 +19,6 @@
             --shadow-color: rgba(0, 0, 0, 0.15);
         }
 
-        /* Cart Section */
         .cart-section {
             padding: 20px;
             background-color: var(--background-color);
@@ -43,7 +42,7 @@
             font-size: 2rem;
         }
 
-        /* Cart Items */
+       
         .cart-item {
             display: flex;
             align-items: center;
@@ -89,7 +88,7 @@
             margin-bottom: 15px;
         }
 
-        /* Quantity Controls */
+      
         .quantity-controls {
             display: flex;
             align-items: center;
@@ -138,7 +137,7 @@
             background: #cc0000;
         }
 
-        /* Cart Summary */
+       
         .cart-summary {
             margin-top: 30px;
             padding: 20px;
@@ -179,7 +178,7 @@
             background: var(--secondary-color);
         }
 
-        /* Empty Cart */
+   
         .cart-empty {
             text-align: center;
             padding: 40px 20px;
@@ -212,7 +211,7 @@
             color: var(--secondary-color);
         }
 
-        /* Mobile Responsive Styles */
+       
         @media screen and (max-width: 768px) {
             .cart-section {
                 padding: 10px;
@@ -408,7 +407,7 @@
         function showDesktopPaymentInfo(upiId, amount) {
             const cartContainer = document.querySelector('.cart-container');
             
-            // Create payment info section
+           
             const paymentInfo = document.createElement('div');
             paymentInfo.className = 'payment-info';
             paymentInfo.innerHTML = `
